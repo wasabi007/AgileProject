@@ -9,12 +9,16 @@ class Project(object):
         # stores comments
         # self.comment = []
 
-    def register(self, username, password):
+    def save_user(self, username, password, role):
         username = input("Enter your username: ")
         password = input("Enter your password: ")
+        role = input("Enter your role: ")
+
         self.users.append({
-            "username": username,
-            "password": password
+            "username: ": username,
+            "password: ": password,
+            "role: ": role
+
         })
         print("User successfully created")
 
