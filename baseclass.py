@@ -1,6 +1,5 @@
 from normal_user import User
 
-user = User()
 
 class BaseClass(User):
 
@@ -10,14 +9,14 @@ class BaseClass(User):
 
     def delete_comment(self, comment_id):
         usertype = self.user_type()
-        if usertype == 'mod' or usertype == 'admin':
+        if usertype.role == 'mod' or usertype.role == 'admin':
             self.comments.remove(comment_id)
         else:
             print('not allowed')
 
     def delete_user(self, user_id):
         usertype = self.user_type()
-        if usertype == 'admin':
+        if usertype.role == 'admin':
             self.users.remove(user_id)
         else:
             print('not allowed')
